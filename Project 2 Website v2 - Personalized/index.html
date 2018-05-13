@@ -1,0 +1,115 @@
+<html>
+
+<head>
+  <title>Interactive Posters &mdash; Shivam Sinha</title>
+  <link rel="stylesheet" href="assets/indexstyle.css">
+</head>
+
+<body>
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="">
+  </div>
+  <div class="cont s--inactive">
+    <!-- cont inner start -->
+    <div class="cont__inner">
+      <!-- el start -->
+        <div class="el">
+          <a href="poster1.html" target="_blank">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">1</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="1">1</div>
+            </div>
+          </div>
+        </a>
+        </div>
+      <!-- el end -->
+      <!-- el start -->
+        <div class="el">
+          <a href="poster2.html" target="_blank">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">2</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="2">2</div>
+            </div>
+          </div>
+        </a>
+        </div>
+      <!-- el end -->
+      <!-- el start -->
+        <div class="el">
+          <a href="poster3.html" target="_blank">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">3</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="3">3</div>
+            </div>
+          </div>
+                </a>
+        </div>
+      <!-- el end -->
+      <!-- el start -->
+        <div class="el">
+          <a href="poster4.html" target="_blank">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">4</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="4">4</div>
+            </div>
+          </div>
+        </a>
+        </div>
+      <!-- el end -->
+      <!-- el start -->
+        <div class="el">
+          <a href="poster5.html" target="_blank">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">5</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="5">5</div>
+            </div>
+          </div>
+        </a>
+        </div>
+      <!-- el end -->
+    </div>
+    <!-- cont inner end -->
+  </div>
+</body>
+
+<script>
+  var $cont = document.querySelector('.cont');
+  var $elsArr = [].slice.call(document.querySelectorAll('.el'));
+  var $closeBtnsArr = [].slice.call(document.querySelectorAll('.el__close-btn'));
+
+  setTimeout(function() {
+    $cont.classList.remove('s--inactive');
+  }, 200);
+</script>
+
+</html>

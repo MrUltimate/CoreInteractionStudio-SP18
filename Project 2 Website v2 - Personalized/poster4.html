@@ -1,0 +1,337 @@
+<html>
+
+<head>
+  <title>Poster 4 - Font Skew</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="size-blocker">
+    <p>Please reduce the width of your browser window until you can see the poster.</p>
+  </div>
+  <a href="poster3.html" ><div class="arrows prev"></div></a>
+  <a href="poster5.html" ><div class="arrows next"></div></a>
+  <div class="poster04-container">
+    <!-- <div class="poster04-text skew01">Design</div>
+    <div class="poster04-text skew02">is</div>
+    <div class="poster04-text skew03">so</div>
+    <div class="poster04-text skew04">Simple.</div><br />
+    <div class="poster04-text skew05">That's</div>
+    <div class="poster04-text skew06">why</div>
+    <div class="poster04-text skew07">it's</div>
+    <div class="poster04-text skew08">so</div>
+    <div class="poster04-text skew09">Complicated.</div> -->
+  </div>
+
+
+  <div class="label label-topright"> <span style="letter-spacing: -1pt">&mdash;&mdash;</span> Poster 04 <br /> helloshivam.com</div>
+  <div class="label label-botright"> &mdash; Statement</div>
+  <div class="label-midleft"><span style="letter-spacing: -1pt">&mdash;&mdash;</span> Interaction Poster</div>
+
+  <div class="reset">
+    <i class="fas fa-sync"></i>
+  </div>
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- <script>
+  $(document).ready(function() {
+    var viewportwidth = $(window).width();
+    var animate_checker = false;
+    $(window).resize(function() {
+      viewportwidth = $(window).width();
+      // console.log(viewportwidth);
+      if (viewportwidth <= 785 && animate_checker == false) {
+        // console.log("Adding Animation Class")
+        setTimeout(function() {
+          $('.skew01').addClass('intro-skew-animate-rev');
+          $('.skew09').addClass('intro-skew-animate');
+          animate_checker = true;
+        }, 1000);
+        setTimeout(function() {
+          $('.skew01').removeClass('intro-skew-animate-rev');
+          $('.skew09').removeClass('intro-skew-animate');
+        }, 3000);
+      }
+
+      if (viewportwidth > 1000) {
+        animate_checker = false;
+      }
+    });
+
+    if (viewportwidth <= 785 && animate_checker == false) {
+      // console.log("Adding Animation Class")
+      setTimeout(function() {
+        $('.skew01').addClass('intro-skew-animate-rev');
+        $('.skew09').addClass('intro-skew-animate');
+        animate_checker = true;
+      }, 1000);
+      setTimeout(function() {
+        $('.skew01').removeClass('intro-skew-animate-rev');
+        $('.skew09').removeClass('intro-skew-animate');
+      }, 3000);
+    }
+  });
+</script> -->
+
+<script>
+$("body").get(0).style.setProperty("--bg-color", "#C065AA");
+$("body").get(0).style.setProperty("--supp-colors", "#BCE2DD");
+
+$('.reset').click(function() {
+  window.location.reload();
+});
+
+var text_string =
+  "49 72 6F 6E 69 63 61 6C 6C 79 2C 20 74 68 6F 75 67 68 20 74 68 65 20 55 53 20 61 69 6D 20 61 74 20 70 72 65 73 65 72 76 69 6E 67 20 74 68 65 20 41 6D 65 72 69 63 61 6E 20 6C 69 66 65 2C 20 69 74 20 19 73 20 76 65 72 79 20 6F 72 69 67 69 6E 73 20 61 72 65 20 6D 61 64 65 20 6F 66 20 69 6D 6D 69 67 72 61 6E 74 73 20 66 72 6F 6D 20 77 65 73 74 65 72 6E 20 77 69 74 68 6F 75 74 20 77 68 6F 6D 20 74 68 65 20 63 6F 75 6E 74 72 79 20 77 6F 75 6C 64 6E 20 19 74 20 68 61 76 65 20 62 65 63 6F 6D 65 20 74 68 65 20 68 65 67 65 6D 6F 6E 20 69 74 20 69 73 20 63 6F 6E 73 69 64 65 72 65 64 20 74 6F 64 61 79 2E 20";
+
+var characters = text_string.split(" ");
+
+console.log(characters);
+
+// $this = $(this);
+// $this.empty();
+$.each(characters, function(i, el) {
+  $('.poster04-container').append("<div class=\"poster04-text\">" + el + "</div>");
+  $('.poster04-container').append("<div class=\"poster04-text\"> &nbsp;</div>");
+});
+
+var prevX = -1;
+
+$('.poster04-text').draggable({
+drag: function(e) {
+    //console.log(e.pageX);
+    // dragged left
+    if(prevX > e.pageX) {
+        $(this).removeClass('cls2').addClass('cls');
+    }
+    else if(prevX < e.pageX) { // dragged right
+        $(this).removeClass('cls').addClass('cls2');
+    }
+    prevX = e.pageX;
+},
+containment: 'body'
+});
+</script>
+
+<!-- <script>
+  var fontskew01 = 0;
+  var fontskew02 = 0;
+  var fontskew03 = 0;
+  var fontskew04 = 0;
+  var fontskew05 = 0;
+  var fontskew06 = 0;
+  var fontskew07 = 0;
+  var fontskew08 = 0;
+  var fontskew09 = 0;
+  var prevX = -1;
+
+  $('.skew01').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew01 = fontskew01 - 1;
+        // if (fontskew01 < 400) {
+        //   fontskew01 = 400;
+        // }
+        $(this).css('transform', 'skew('+fontskew01+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew01 = fontskew01 + 1;
+        // if (fontskew01 > 900) {
+        //   fontskew01 = 900;
+        // }
+        $(this).css('transform', 'skew('+fontskew01+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew02').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew02 = fontskew02 - 1;
+        $(this).css('transform', 'skew('+fontskew02+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew02 = fontskew02 + 1;
+        $(this).css('transform', 'skew('+fontskew02+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew03').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew03 = fontskew03 - 1;
+        $(this).css('transform', 'skew('+fontskew03+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew03 = fontskew03 + 1;
+        $(this).css('transform', 'skew('+fontskew03+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew04').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew04 = fontskew04 - 1;
+        $(this).css('transform', 'skew('+fontskew04+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew04 = fontskew04 + 1;
+        $(this).css('transform', 'skew('+fontskew04+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew05').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew05 = fontskew05 - 1;
+        $(this).css('transform', 'skew('+fontskew05+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew05 = fontskew05 + 1;
+        $(this).css('transform', 'skew('+fontskew05+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew06').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew06 = fontskew06 - 1;
+        $(this).css('transform', 'skew('+fontskew06+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew06 = fontskew06 + 1;
+        $(this).css('transform', 'skew('+fontskew06+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew07').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew07 = fontskew07 - 1;
+        $(this).css('transform', 'skew('+fontskew07+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew07 = fontskew07 + 1;
+        $(this).css('transform', 'skew('+fontskew07+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew08').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew08 = fontskew08 - 1;
+        $(this).css('transform', 'skew('+fontskew08+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew08 = fontskew08 + 1;
+        $(this).css('transform', 'skew('+fontskew08+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+
+  $('.skew09').draggable({
+    drag: function(e) {
+      //console.log(e.pageX);
+      if (prevX == -1) {
+        prevX = e.pageX;
+        return false;
+      }
+      // dragged left
+      if (prevX > e.pageX) {
+        fontskew09 = fontskew09 - 1;
+        $(this).css('transform', 'skew('+fontskew09+'deg)');
+
+      } else if (prevX < e.pageX) { // dragged right
+        fontskew09 = fontskew09 + 1;
+        $(this).css('transform', 'skew('+fontskew09+'deg)');
+      }
+      prevX = e.pageX;
+    },
+    revert: false,
+    axis: "xy"
+  });
+</script> -->
+
+</html>

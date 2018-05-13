@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/reset.css">
+	<!-- CSS reset -->
+	<link rel="stylesheet" href="assets/style.css">
+	<!-- Resource style -->
+	<title>Shivam Sinha - Graphic Designer</title>
+</head>
+
+<body id="particles-js" class="box animsition">
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<!-- Error Message -->
+	<div class="mobile-message">
+    <div class="error-container">
+      <i class="fas fa-exclamation-triangle" style="color: #AA3F39; font-size: 8em;"></i>
+      <p>This website is not optomized for Mobile. Please access this on your Desktop.</p>
+    </div>
+  </div>
+	<!-- Intro Message -->
+	<div class="intro-container">
+		<div class="intro-message">Find</div>
+		<div class="intro-message">Your</div>
+		<div class="intro-message">Path.</div>
+	</div>
+	<!-- Stars -->
+	<div class="star1 aimless disabled"></div>
+	<a href="newphoto2.html" class="animsition-link" data-animsition-out-class="fade-out-up">
+		<div class="star2 aimless" id="enabled"></div>
+	</a>
+	<div class="star3 aimless disabled"></div>
+	<div class="star4 aimless disabled"></div>
+	<div class="star5 aimless disabled"></div>
+	<div class="star6 aimless disabled"></div>
+	<div class="star7 aimless disabled"></div>
+	<!-- Resource jQuery -->
+	<script src="assets/particles.min.js"></script>
+	<script src="assets/app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<!-- jQuery Plugin -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+	<!-- animsition.css -->
+	<link rel="stylesheet" href="assets/dist/css/animsition.min.css">
+	<!-- animsition.js -->
+	<script src="assets/dist/js/animsition.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+	<!-- Preloader -->
+	<script type="text/javascript">
+		//<![CDATA[
+		$(window).on('load', function() { // makes sure the whole site is loaded
+			$('#status').fadeOut(); // will first fade out the loading animation
+			$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+			$('body').delay(350).css({
+				'overflow': 'visible'
+			});
+		})
+		//]]>
+	</script>
+
+	<script>
+		var line1 = $('#line1');
+		var star1 = $('.star1');
+		var star2 = $('.star2');
+
+		var star12pos1 = star1.position();
+		var star12pos2 = star2.position();
+
+		line1.attr('x1', star12pos1.left).attr('y1', star12pos1.top).attr('x2', star12pos2.left).attr('y2', star12pos2.top);
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			setTimeout(function () {
+				$('.intro-container').fadeOut(750, function(){
+					$('.intro-container').remove();
+				});
+			}, 7000);
+			$('.disabled').click(function() {
+				$(this).addClass("error");
+				$(this).on(
+					"transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+					function() {
+						$(this).removeClass("error");
+					});
+			});
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$(".animsition").animsition({
+				inClass: 'fade-in',
+				outClass: 'fade-out',
+				inDuration: 1500,
+				outDuration: 800,
+				linkElement: '.animsition-link',
+				// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+				loading: true,
+				loadingParentElement: 'body', //animsition wrapper element
+				loadingClass: 'animsition-loading',
+				loadingInner: '', // e.g '<img src="loading.svg" />'
+				timeout: false,
+				timeoutCountdown: 5000,
+				onLoadEvent: true,
+				browser: ['animation-duration', '-webkit-animation-duration'],
+				// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+				// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+				overlay: false,
+				overlayClass: 'animsition-overlay-slide',
+				overlayParentElement: 'body',
+				transition: function(url) {
+					window.location.href = url;
+				}
+			});
+		});
+	</script>
+	<!-- <script>
+window.onload = function () {
+
+var parallaxBox = document.querySelector('.box');
+var c1left = document.getElementById ( 'l1' ).offsetLeft,
+c1top = document.getElementById ( 'l1' ).offsetTop,
+c2left = document.getElementById ( 'l2' ).offsetLeft,
+c2top = document.getElementById ( 'l2' ).offsetTop,
+c3left = document.getElementById ( 'l3' ).offsetLeft,
+c3top = document.getElementById ( 'l3' ).offsetTop,
+c4left = document.getElementById ( 'l4' ).offsetLeft,
+c4top = document.getElementById ( 'l4' ).offsetTop,
+c5left = document.getElementById ( 'l5' ).offsetLeft,
+c5top = document.getElementById ( 'l5' ).offsetTop,
+c6left = document.getElementById ( 'l6' ).offsetLeft,
+c6top = document.getElementById ( 'l6' ).offsetTop,
+c7left = document.getElementById ( 'l7' ).offsetLeft,
+c7top = document.getElementById ( 'l7' ).offsetTop;
+
+parallaxBox.onmousemove = function ( event ) {
+  event = event || window.event;
+  var x = event.clientX - parallaxBox.offsetLeft,
+  y = event.clientY - parallaxBox.offsetTop;
+
+  mouseParallax ( 'l1', c1left, c1top, x, y, 30 );
+  mouseParallax ( 'l2', c2left, c2top, x, y, 60 );
+  mouseParallax ( 'l3', c3left, c3top, x, y, 35 );
+  mouseParallax ( 'l4', c4left, c4top, x, y, 40 );
+  mouseParallax ( 'l5', c5left, c5top, x, y, 80 );
+  mouseParallax ( 'l6', c6left, c6top, x, y, 50 );
+  mouseParallax ( 'l7', c7left, c7top, x, y, 70 );
+}
+
+}
+
+function mouseParallax ( id, left, top, mouseX, mouseY, speed ) {
+var obj = document.getElementById ( id );
+var parentObj = obj.parentNode,
+containerWidth = parseInt( parentObj.offsetWidth ),
+containerHeight = parseInt( parentObj.offsetHeight );
+obj.style.left = left - ( ( ( mouseX - ( parseInt( obj.offsetWidth ) / 2 + left ) ) / containerWidth ) * speed ) + 'px';
+obj.style.top = top - ( ( ( mouseY - ( parseInt( obj.offsetHeight ) / 2 + top ) ) / containerHeight ) * speed ) + 'px';
+}
+</script> -->
+</body>
+</html>

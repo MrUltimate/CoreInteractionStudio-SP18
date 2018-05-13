@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto|Roboto+Mono" rel="stylesheet">
+	<!-- CSS reset -->
+	<link rel="stylesheet" href="assets/projectstyle.css">
+	<!-- Resource style -->
+	<title>Photo 3</title>
+</head>
+<!-- class="animsition" -->
+<body class="animsition">
+	<div class="mobile-message">
+    <div class="error-container">
+      <i class="fas fa-exclamation-triangle" style="color: #AA3F39; font-size: 8em;"></i>
+      <p>This website is not optomized for Mobile. Please access this on your desktop.</p>
+    </div>
+  </div>
+	<!-- Main Content -->
+	<div class="image-5"></div>
+	<div class="info title">Nasa Image Title</div>
+	<div class="info-box box-1">
+		<div class="info info-1">1150mm</div>
+		<div class="info sub-info-1">Focal Length</div>
+	</div>
+	<div class="info-box box-2">
+		<div class="info info-2">f/7.1</div>
+		<div class="info sub-info-2">Lens Aperture</div>
+	</div>
+	<div class="info-box box-3">
+		<div class="info info-3">52k ft</div>
+		<div class="info sub-info-3">Satellite Elevation</div>
+	</div>
+	<!-- Close Button -->
+	<a href="stage2.html"  class="close animsition-link" data-animsition-out-class="fade-out-down">
+		<i class="far fa-times-circle"></i>
+	</a>
+	<!-- More Info Button -->
+	<div class="more-content">
+		<i class="fas fa-caret-down" style="transition: transform .5s ease"></i>
+	</div>
+	<div class="more-content-container">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue nisi ut risus maximus varius. Praesent maximus ipsum non tempor faucibus. Phasellus efficitur aliquet posuere. Cras convallis neque at est euismod, eu cursus ligula sodales. Nulla iaculis justo consectetur, dictum lorem ut, imperdiet nunc. Donec convallis nisl nec aliquet blandit. Pellentesque sed pulvinar nulla, eget ullamcorper mauris. Curabitur commodo convallis sagittis. Nam commodo blandit nibh, sit amet ullamcorper nisl accumsan in.
+<br /><br />
+Etiam viverra arcu eu mattis fermentum. Sed mauris diam, ullamcorper consectetur rhoncus sed, maximus vel nibh. Aenean vel cursus nisl, quis dignissim nisl. Ut tempus mauris lacus, sit amet mollis urna finibus at. Etiam diam nulla, volutpat et orci in, aliquet ullamcorper neque. Suspendisse urna orci, congue in mauris ut, finibus semper magna. Mauris vitae ipsum a nulla feugiat dignissim. Aliquam erat justo, feugiat sed elit quis, scelerisque vestibulum mi. Sed molestie cursus egestas. Integer pellentesque dui augue, sit amet varius justo volutpat nec. Vestibulum sit amet ante volutpat, molestie risus nec, suscipit justo. Duis accumsan nulla tristique dui pretium, ut rhoncus lacus vestibulum.
+		</p>
+	</div>
+	<!-- Resource jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<!-- jQuery Plugin -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<!-- animsition.css -->
+	<link rel="stylesheet" href="assets/dist/css/animsition.min.css">
+	<!-- animsition.js -->
+	<script src="assets/dist/js/animsition.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.image-5').click(function() {
+				$(this).toggleClass('minimize');
+				$('.info').toggleClass('show');
+			});
+			$('.more-content').click(function() {
+				$('.fa-caret-down').toggleClass('more-content-active');
+				$('.more-content-container').toggleClass('more-content-slide');
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			$(".animsition").animsition({
+				inClass: 'fade-in',
+				outClass: 'fade-out',
+				inDuration: 1500,
+				outDuration: 800,
+				linkElement: '.animsition-link',
+				// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+				loading: true,
+				loadingParentElement: 'body', //animsition wrapper element
+				loadingClass: 'animsition-loading',
+				loadingInner: '', // e.g '<img src="loading.svg" />'
+				timeout: false,
+				timeoutCountdown: 5000,
+				onLoadEvent: true,
+				browser: ['animation-duration', '-webkit-animation-duration'],
+				// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+				// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+				overlay: false,
+				overlayClass: 'animsition-overlay-slide',
+				overlayParentElement: 'body',
+				transition: function(url) {
+					window.location.href = url;
+				}
+			});
+		});
+	</script>
+</body>
+</html>

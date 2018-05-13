@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <title>Poster 2 - Font Weight</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body style="background: #C53638;">
+  <div class="size-blocker">
+    <p>Please reduce the width of your browser window until you can see the poster.</p>
+  </div>
+  <div class="p03-outer-container">
+    <div class="poster03-container">
+      <div class="item1">
+        <div class="text-it1">Design</div>
+      </div>
+      <div class="item2"></div>
+      <div class="item3">
+        <div class="text-it2">Complications</div>
+      </div>
+      <div class="item4">
+        <div class="text-it4">Simplifies</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="label label-topright"> <span style="letter-spacing: -1pt">&mdash;&mdash;</span> Poster 03 <br /> helloshivam.com</div>
+  <div class="label label-botright"> &mdash; Unknown</div>
+  <div class="label-midleft"><span style="letter-spacing: -1pt">&mdash;&mdash;</span> Interaction Poster</div>
+
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('.item2').hover(function() {
+    $('.item1').css('width', '25%');
+    $('.item1').css('height', '75%');
+    $('.item3').css('width', '25%');
+    $('.item3').css('height', '25%');
+  }, function() {
+    $('.item1').css('width', '');
+    $('.item1').css('height', '');
+    $('.item3').css('width', '');
+    $('.item3').css('height', '');
+  });
+
+  $('.item3').hover(function() {
+    $('.item1').css('width', '85%');
+    $('.item1').css('height', '25%');
+    $('.item2').css('width', '15%');
+    $('.item2').css('height', '30%');
+  }, function() {
+    $('.item1').css('width', '');
+    $('.item1').css('height', '');
+    $('.item2').css('width', '');
+    $('.item2').css('height', '');
+  });
+
+  $('.item4').hover(function() {
+    $('.item1').css('width', '20%');
+    $('.item2').css('width', '80%');
+    $('.item2').css('height', '15%');
+    $('.item3').css('width', '20%');
+  }, function() {
+    $('.item1').css('width', '');
+    $('.item2').css('width', '');
+    $('.item2').css('height', '');
+    $('.item3').css('width', '');
+  });
+});
+</script>
+
+<!-- <script>
+  $(document).ready(function() {
+    var viewportwidth = $(window).width();
+    var animate_checker = false;
+    $(window).resize(function() {
+      viewportwidth = $(window).width();
+      // console.log(viewportwidth);
+      if (viewportwidth <= 785 && animate_checker == false) {
+        // console.log("Adding Animation Class")
+        setTimeout(function() {
+          $('.weight01').addClass('intro-slide-animate-rev');
+          $('.weight05').addClass('intro-slide-animate');
+          animate_checker = true;
+        }, 1000);
+        setTimeout(function() {
+          $('.weight01').removeClass('intro-slide-animate-rev');
+          $('.weight05').removeClass('intro-slide-animate');
+        }, 3000);
+      }
+
+      if (viewportwidth > 1000) {
+        animate_checker = false;
+      }
+    });
+
+    if (viewportwidth <= 785 && animate_checker == false) {
+      // console.log("Adding Animation Class")
+      setTimeout(function() {
+        $('.weight01').addClass('intro-slide-animate-rev');
+        $('.weight05').addClass('intro-slide-animate');
+        animate_checker = true;
+      }, 1000);
+      setTimeout(function() {
+        $('.weight01').removeClass('intro-slide-animate-rev');
+        $('.weight05').removeClass('intro-slide-animate');
+      }, 3000);
+    }
+  });
+</script> -->
+
+</html>

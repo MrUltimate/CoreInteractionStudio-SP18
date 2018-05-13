@@ -1,0 +1,97 @@
+<html>
+
+<head>
+  <title>Poster 1 - Rotatable</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <div class="size-blocker">
+    <p>Please reduce the width of your browser window until you can see the poster.</p>
+  </div>
+  <div class="drag base">
+    <img src="assets/images/base.png" alt="base" draggable="false" />
+  </div>
+  <div class="drag layer1">
+    <img src="assets/images/layer1.png" alt="layer-1" draggable="false" />
+  </div>
+  <div class="drag layer2">
+    <img src="assets/images/layer2.png" alt="layer-2" draggable="false" />
+  </div>
+
+  <div class="label label-topright"> <span style="letter-spacing: -1pt">&mdash;&mdash;</span> Poster 01 <br /> helloshivam.com</div>
+  <div class="label label-botright"> &mdash; Dieter Rams</div>
+  <div class="label-midleft"><span style="letter-spacing: -1pt">&mdash;&mdash;</span> Interaction Poster</div>
+  <div class="switch">
+    <input type="checkbox" id="switch" autocomplete="off"/><label for="switch">Toggle</label>
+  </div>
+
+  <!-- <img src="assets/images/poster01-label.png" alt="label" draggable="false" class="label-topright">
+  <img src="assets/images/poster01-label3.png" alt="label" draggable="false" class="label-botright">
+  <img src="assets/images/poster01-label4.png" alt="label" draggable="false" class="label-midleft"> -->
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/easing/EasePack.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/utils/Draggable.min.js"></script>
+
+<script>
+  function update() {
+    Draggable.create(".drag", {
+      type: "rotation",
+    });
+  }
+  update();
+
+  $('#switch').click(function(){
+    $('.base').toggleClass('rotating-1');
+    $('.layer1').toggleClass('rotating-2');
+    $('.layer2').toggleClass('rotating-3');
+})
+</script>
+
+<script>
+  $(document).ready(function() {
+    var viewportwidth = $(window).width();
+    var animate_checker = false;
+    $(window).resize(function() {
+      viewportwidth = $(window).width();
+      console.log(viewportwidth);
+      if(viewportwidth<=785 && animate_checker == false){
+        console.log("Adding Animation Class")
+        setTimeout(function() {
+          $('.base, .layer2').addClass('intro-animate');
+          $('.layer1').addClass('intro-animate-rev');
+          animate_checker = true;
+        }, 1000);
+        setTimeout(function() {
+          $('.base, .layer2').removeClass('intro-animate');
+          $('.layer1').removeClass('intro-animate-rev');
+        }, 3000);
+      }
+
+      if(viewportwidth > 1000)
+      {
+        animate_checker = false;
+      }
+    });
+
+    if(viewportwidth<=785 && animate_checker == false){
+      console.log("Adding Animation Class")
+      setTimeout(function() {
+        $('.base, .layer2').addClass('intro-animate');
+        $('.layer1').addClass('intro-animate-rev');
+      }, 1000);
+      setTimeout(function() {
+        $('.base, .layer2').removeClass('intro-animate');
+        $('.layer1').removeClass('intro-animate-rev');
+        animate_checker = true;
+      }, 3000);
+    }
+  });
+</script>
+
+</html>

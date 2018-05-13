@@ -1,0 +1,140 @@
+<html>
+
+<head>
+  <title>Poster 5 - Randomize Letters</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="size-blocker">
+    <p>Please reduce the width of your browser window until you can see the poster.</p>
+  </div>
+  <a href="poster4.html" ><div class="arrows prev"></div></a>
+  <a href="poster1.html" ><div class="arrows next"></div></a>
+  <div class="poster05-container">
+    <!-- <div class="poster05-text letter01">I</div>
+    <div class="poster05-text letter02">f</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter03">y</div>
+    <div class="poster05-text letter04">o</div>
+    <div class="poster05-text letter05">u</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter06">d</div>
+    <div class="poster05-text letter07">o</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter08">i</div>
+    <div class="poster05-text letter09">t</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter10">r</div>
+    <div class="poster05-text letter11">i</div>
+    <div class="poster05-text letter12">g</div>
+    <div class="poster05-text letter13">h</div>
+    <div class="poster05-text letter14">t</div>
+    <div class="poster05-text letter15">,</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter16">I</div>
+    <div class="poster05-text letter17">t</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter18">w</div>
+    <div class="poster05-text letter19">i</div>
+    <div class="poster05-text letter20">l</div>
+    <div class="poster05-text letter21">l</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter22">l</div>
+    <div class="poster05-text letter23">a</div>
+    <div class="poster05-text letter24">s</div>
+    <div class="poster05-text letter25">t</div>
+    <div class="poster05-text">&nbsp;</div>
+    <div class="poster05-text letter26">f</div>
+    <div class="poster05-text letter27">o</div>
+    <div class="poster05-text letter28">r</div>
+    <div class="poster05-text letter29">e</div>
+    <div class="poster05-text letter30">v</div>
+    <div class="poster05-text letter31">e</div>
+    <div class="poster05-text letter32">r</div>
+    <div class="poster05-text letter33">.</div> -->
+  </div>
+
+
+  <div class="label label-topright"> <span style="letter-spacing: -1pt">&mdash;&mdash;</span> Poster 05 <br /> helloshivam.com</div>
+  <div class="label label-botright"> &mdash; Imposition</div>
+  <div class="label-midleft"><span style="letter-spacing: -1pt">&mdash;&mdash;</span> Interaction Poster</div>
+
+  <div class="reset">
+    <i class="fas fa-sync"></i>
+  </div>
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+  $("body").get(0).style.setProperty("--bg-color", "#4DA7F6");
+  $("body").get(0).style.setProperty("--supp-colors", "#CA2028");
+
+  $('.reset').click(function() {
+    window.location.reload();
+  });
+
+  var text_string =
+    "54 68 65 20 6F 62 6A 65 63 74 20 69 73 20 63 6F 6E 73 74 61 6E 74 6C 79 20 66 6F 72 63 65 64 20 74 6F 20 70 6C 61 79 20 61 20 72 6F 6C 65 20 69 6E 20 74 68 65 20 6E 65 65 64 73 20 6F 66 20 69 74 73 20 74 69 6D 65 2C 20 6E 6F 20 6D 61 74 74 65 72 20 77 68 61 74 20 74 68 65 20 69 6E 74 65 6E 74 69 6F 6E 20 6F 66 20 74 68 65 20 64 65 73 69 67 6E 65 72 20 6D 61 79 62 65 2C 20 74 68 65 20 6F 62 6A 65 63 74 20 65 6E 64 73 20 75 70 20 62 65 63 6F 6D 69 6E 67 20 77 68 61 74 20 73 6F 63 69 65 74 79 20 69 6D 70 6F 73 65 73 20 6F 6E 20 69 74 2E 20";
+
+  var characters = text_string.split("");
+
+  // console.log(characters);
+
+  // $this = $(this);
+  // $this.empty();
+  $.each(characters, function(i, el) {
+    $('.poster05-container').append("<div class=\"poster05-text\">" + el + "</div>");
+    if (characters[i] == " ") {
+      $('.poster05-container').append("<div class=\"poster05-text\"> &nbsp; </div>");
+    }
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+
+    var windowWidth = $(window).width();
+    console.log(windowWidth);
+
+    var position_checker = false;
+      // T_L_Positions = [];
+    $(document).click(function() {
+      if (position_checker == false) {
+        $('.poster05-text').each(function(i) {
+          $(this).css({
+            position: 'relative',
+          });
+
+          var docHeight = $(document).height(),
+            docWidth = $(document).width(),
+            divWidth = 500,
+            divHeight = 600,
+            heightMax = docHeight - divHeight,
+            widthMax = docWidth - divWidth;
+
+          var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+          var posLeft = Math.floor(Math.random() * widthMax) * plusOrMinus;
+          var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+          var posTop = Math.floor(Math.random() * heightMax) * plusOrMinus;
+
+          // console.log(posLeft, posTop);
+
+          $(this).animate({
+            position: 'fixed',
+            left: posLeft,
+            top: posTop
+          }, 1000, 'easeInQuint');
+        });
+      }
+    });
+  });
+</script>
+
+</html>
